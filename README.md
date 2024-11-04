@@ -38,3 +38,6 @@ new_date = dateonly_20.add_date(encoded, 1, 2, 15)
 # Convert the encoded date to a string in YYYY-MM-DD format
 date_str = dateonly_20.date_to_iso_string(encoded)
 ```
+![Untitled](https://github.com/user-attachments/assets/4b1cacd9-ffaf-4d00-ac38-1b73454095d1)
+
+
