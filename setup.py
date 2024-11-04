@@ -8,10 +8,16 @@ module = Extension(
 
 setup(
     name="dateonly_20",
-    version="0.1",
+    version="0.1.0",
     description="A package for encoding, decoding, and manipulating 20th centure dates with C-level performance.",
     author="Isham Mohamed",
     author_email="email@goes.here",
     ext_modules=[module],
     packages=["dateonly_20"],
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    python_requires=">=3.6",
 )
