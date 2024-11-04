@@ -20,11 +20,13 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install --upgrade setuptools wheel twine
+          python -m pip install --upgrade setuptools wheel twine cibuildwheel
 
       - name: Build the package
+        env:
+          CIBW_PLATFORM: "linux"  # Can specify different platforms if needed
         run: |
-          python setup.py sdist bdist_wheel
+          cibuildwheel --output-dir dist
 
       - name: Publish to PyPI
         env:
