@@ -12,13 +12,19 @@ A Python C extension for encoding, decoding, and manipulating 20th-century dates
 
 ## Installation
 
-To install the module, clone the repository and run the following:
+To install the module, clone the repository and run the following based on the scenario:
 
+### Test and debug
 ```bash
 python setup.py build_ext --inplace   # Compile C code
 python setup.py install               # Install the module
 ```
 
+### Prod usage
+```bash
+pip install setuptools wheel          # Install setup tools
+pip install dist/*.whl 
+```
 
 ## Usage
 Here’s a simple example of how to use the module:
