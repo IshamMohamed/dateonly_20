@@ -11,12 +11,12 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="dateonly_20",
-    version="0.1.0",
+    version="0.1.1",
     description="A package for encoding, decoding, and manipulating 20th centure dates with C-level performance.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Isham Mohamed",
-    author_email="email@goes.here",
+    author_email="isham.iqbal@icloud.com",
     ext_modules=[module],
     packages=["dateonly_20"],
     classifiers=[
