@@ -2,6 +2,7 @@
 
 A Python C extension for encoding, decoding, and manipulating 20th-century dates with high performance. This module provides efficient functions for date encoding into a compact format, decoding back to standard date representations, and performing arithmetic operations like adding years, months, and days.
 
+[![Build Python Extension](https://github.com/IshamMohamed/dateonly_20/actions/workflows/main.yml/badge.svg)](https://github.com/IshamMohamed/dateonly_20/actions/workflows/main.yml)
 ## Features
 
 - **Encode Dates**: Convert dates into a 16-bit integer representation.
