@@ -33,7 +33,7 @@ jobs:
           cibuildwheel --output-dir dist
 
       - name: Publish to PyPI
-        if: ${{ matrix.os == 'ubuntu-latest' }}  # Only upload once (on Linux)
+        if: ${{ matrix.os == 'macos-latest' }}  # Only upload once (on Linux)
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
