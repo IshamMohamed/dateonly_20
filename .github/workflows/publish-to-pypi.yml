@@ -3,7 +3,7 @@ name: Publish Python Package
 on:
   push:
     tags:
-      - 'v*'  # Triggers the workflow on tags starting with 'v'
+      - 'v*'  # Triggers the workflow when pushing a tag that starts with 'v'
 
 jobs:
   publish:
@@ -21,16 +21,14 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install cibuildwheel
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           python -m pip install --upgrade setuptools wheel twine cibuildwheel
 
       - name: Build the package
         env:
-          CIBW_PLATFORM: ${{ matrix.os == 'ubuntu-latest' && 'linux' || matrix.os }}
-          CIBW_BUILD: "cp3?-*"       # Specifies compatible Python versions for wheels
-          CIBW_ARCHS_WINDOWS: "x86_64"  # Optional: Specifies architecture on Windows
+          CIBW_PLATFORM: ${{ matrix.os == 'macos-latest' && 'macos' || (matrix.os == 'windows-latest' && 'windows' || 'linux') }}
         run: |
           cibuildwheel --output-dir dist
 
@@ -40,5 +38,4 @@ jobs:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
         run: |
-          python -m pip install --upgrade twine
           python -m twine upload dist/*
