@@ -11,7 +11,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="dateonly_20",
-    version="0.1.471",
+    version="0.1.472",
     description="A package for encoding, decoding, and manipulating 20th centure dates with C-level performance.",
     long_description=long_description,
     long_description_content_type="text/markdown",
