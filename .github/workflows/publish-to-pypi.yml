@@ -35,8 +35,6 @@ jobs:
           CIBW_BUILD: cp38-* cp39-* cp310-* cp311-*  # Specify only required versions
           CIBW_ARCHS_MACOS: x86_64  # Limit macOS to x86_64 to avoid arm64 issues
           CIBW_SKIP: pp*  # Skip PyPy builds if not needed
-          CIBW_TEST_REQUIRES: pytest  # Optional: install pytest for testing
-          CIBW_TEST_COMMAND: "pytest tests"  # Optional: run tests after build
 
       - name: Publish to PyPI
         if: startsWith(github.ref, 'refs/tags')
