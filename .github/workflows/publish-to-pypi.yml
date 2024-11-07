@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.6', '3.7', '3.8', '3.9', '3.10', '3.11', '3.12', '3.13']
+        python-version: ['3.9', '3.10', '3.11', '3.12', '3.13']
       fail-fast: false
 
     steps:
@@ -30,8 +30,6 @@ jobs:
       - name: Build wheels
         run: |
           cibuildwheel --output-dir wheelhouse
-        env:
-          CIBW_BUILD: cp38-* cp39-* cp310-* cp311-*
 
       - name: Upload Linux wheels
         uses: actions/upload-artifact@v3
@@ -43,7 +41,7 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        python-version: ['3.6', '3.7', '3.8', '3.9', '3.10', '3.11', '3.12', '3.13']
+        python-version: ['3.9', '3.10', '3.11', '3.12', '3.13']
       fail-fast: false
 
     steps:
@@ -63,9 +61,6 @@ jobs:
       - name: Build wheels
         run: |
           cibuildwheel --output-dir wheelhouse
-        env:
-          CIBW_ARCHS_MACOS: x86_64
-          CIBW_SKIP: "macosx_arm64"
 
       - name: Upload macOS wheels
         uses: actions/upload-artifact@v3
@@ -77,7 +72,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        python-version: ['3.6', '3.7', '3.8', '3.9', '3.10', '3.11', '3.12', '3.13']
+        python-version: ['3.9', '3.10', '3.11', '3.12', '3.13']
       fail-fast: false
 
     steps:
