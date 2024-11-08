@@ -15,16 +15,15 @@ A Python C extension for encoding, decoding, and manipulating 20th-century dates
 
 To install the module, clone the repository and run the following based on the scenario:
 
+### Prod usage
+```bash
+pip install dateonly-20
+```
+
 ### Test and debug
 ```bash
 python setup.py build_ext --inplace   # Compile C code
 python setup.py install               # Install the module
-```
-
-### Prod usage
-```bash
-pip install setuptools wheel          # Install setup tools
-pip install dist/*.whl 
 ```
 
 ## Usage
